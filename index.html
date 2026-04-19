@@ -9,27 +9,54 @@
     <style>
         body { font-family: 'Space Grotesk', sans-serif; background-color: #0a0a0a; }
         .gradient-text { background: linear-gradient(to right, #6366f1, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .logo-container { background-image: url('forgedfromcode-logo.png'); background-size: contain; background-repeat: no-repeat; background-position: center; width: 600px; height: 400px; margin: 0 auto 32px; }
+        .logo-banner { 
+            background-image: url('forgedfromcode-logo.png'); 
+            background-size: contain; 
+            background-repeat: no-repeat; 
+            background-position: center; 
+            width: 100%; 
+            height: 250px;
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .logo-banner {
+                height: 200px;
+            }
+            .tag-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .tag {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
     </style>
 </head>
-<body class="flex items-center justify-center min-h-screen text-white px-4">
-    <div class="max-w-2xl text-center">
-        <div class="logo-container mb-4"></div>
-        <p class="text-xl text-gray-400 mb-8 leading-relaxed">
+<body class="flex flex-col items-center justify-center min-h-screen text-white px-4">
+    <!-- Full-width logo banner -->
+    <div class="logo-banner mb-8"></div>
+    
+    <!-- Main content -->
+    <div class="max-w-2xl text-center w-full">
+        <h1 class="text-3xl md:text-4xl font-bold gradient-text mb-4">Forged From Code</h1>
+        <p class="text-lg md:text-xl text-gray-400 mb-8 leading-relaxed">
             Crafting immersive RPG narratives and high-performance digital tools. 
             <br><span class="text-indigo-400 italic">Something new is being compiled.</span>
         </p>
         
-        <div class="flex flex-wrap justify-center gap-4 mb-12">
-            <div class="px-4 py-2 bg-gray-900 border border-gray-800 rounded-full text-sm">#Python</div>
-            <div class="px-4 py-2 bg-gray-900 border border-gray-800 rounded-full text-sm">#Lua</div>
-            <div class="px-4 py-2 bg-gray-900 border border-gray-800 rounded-full text-sm">#RPGWriter</div>
-            <div class="px-4 py-2 bg-gray-900 border border-gray-800 rounded-full text-sm">#GameDev</div>
+        <!-- Tags - responsive grid -->
+        <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-12 tag-container">
+            <div class="px-3 md:px-4 py-2 bg-gray-900 border border-gray-800 rounded-full text-xs md:text-sm tag">#Python</div>
+            <div class="px-3 md:px-4 py-2 bg-gray-900 border border-gray-800 rounded-full text-xs md:text-sm tag">#Lua</div>
+            <div class="px-3 md:px-4 py-2 bg-gray-900 border border-gray-800 rounded-full text-xs md:text-sm tag">#RPGWriter</div>
+            <div class="px-3 md:px-4 py-2 bg-gray-900 border border-gray-800 rounded-full text-xs md:text-sm tag">#GameDev</div>
         </div>
 
+        <!-- Contact section -->
         <div class="space-y-4">
-            <p class="text-sm uppercase tracking-widest text-gray-500 font-bold">Inquiries</p>
-            <a href="mailto:hello@forgedfromcode.com" class="text-2xl hover:text-indigo-400 transition-colors">
+            <p class="text-xs md:text-sm uppercase tracking-widest text-gray-500 font-bold">Inquiries</p>
+            <a href="mailto:hello@forgedfromcode.com" class="text-xl md:text-2xl hover:text-indigo-400 transition-colors block">
                 hello@forgedfromcode.com
             </a>
         </div>
